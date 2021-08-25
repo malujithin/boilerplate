@@ -1,0 +1,18 @@
+.backButton {
+    background: rgb(81, 186, 56);
+    color: white;
+    width: 100%;
+    border: none;
+    margin-top: 15px;
+    border-radius: 0.3rem;
+    height: 32px;
+}
+
+.backButton:focus {
+    background: rgb(173, 196, 218);
+    color: rgb(66, 106, 147);
+}
+.first-name-class{
+    color: red;
+    font-size: 25px;
+}
