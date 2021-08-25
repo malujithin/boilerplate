@@ -18,6 +18,7 @@ const BASE_LOGIN_URL = 'https://merch.aws.na.sysco.net/securityservice/login/';
 const SESSION_TIME = 1800; //30min
 
 export function* login(action){ //generator
+  
  //each step with yield
 
   const requestURL = `${BASE_LOGIN_URL}authenticate`;
