@@ -38,10 +38,20 @@ export function* login(action){ //generator
 
   try {
     // Call our request helper (see 'utils/request')
-    const loginResponse = yield call(request, requestURL, requestAttrs);
-    yield put(actions.loginSuccess((loginResponse.token)));
-    yield put (actions.saveDecodedData(jwt(loginResponse.token)));
-    history.push('/home_page');
+    //const loginResponse = yield call(request, requestURL, requestAttrs);
+
+    if(action.payload.password === "test" && action.payload.username==="test"){
+      yield put(actions.loginSuccess(("sucess")));
+      history.push('/home_page');
+
+    //yield put (actions.saveDecodedData(jwt(loginResponse.token)));
+    }
+    else {
+      yield put(actions.loginFailed('failed'));
+    }
+    // yield put(actions.loginSuccess((loginResponse.token)));
+    // yield put (actions.saveDecodedData(jwt(loginResponse.token)));
+    // history.push('/home_page');
     //window.location.reload();
     if (document.getElementById('loadingIndicatorMain')) {
       document.getElementById('loadingIndicatorMain').style.display = 'none';
